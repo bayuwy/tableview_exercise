@@ -9,27 +9,25 @@
 /* Begin PBXBuildFile section */
 		3A10B9E728D4B039009E1455 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10B9E628D4B039009E1455 /* AppDelegate.swift */; };
 		3A10B9E928D4B039009E1455 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10B9E828D4B039009E1455 /* SceneDelegate.swift */; };
-		3A10B9EB28D4B039009E1455 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10B9EA28D4B039009E1455 /* ViewController.swift */; };
-		3A10B9EE28D4B039009E1455 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A10B9EC28D4B039009E1455 /* Main.storyboard */; };
 		3A10B9F028D4B03B009E1455 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A10B9EF28D4B03B009E1455 /* Assets.xcassets */; };
 		3A10B9F328D4B03B009E1455 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A10B9F128D4B03B009E1455 /* LaunchScreen.storyboard */; };
 		3A10B9FB28D4B1D4009E1455 /* CoffeeShop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A10B9FA28D4B1D4009E1455 /* CoffeeShop.storyboard */; };
 		3A10B9FD28D4B26C009E1455 /* CoffeeShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10B9FC28D4B26C009E1455 /* CoffeeShopListViewController.swift */; };
 		3A10B9FF28D4BBBA009E1455 /* CoffeeShopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10B9FE28D4BBBA009E1455 /* CoffeeShopViewCell.swift */; };
+		3A5BC3D028DDF63400CE9111 /* Coffeeshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5BC3CF28DDF63400CE9111 /* Coffeeshop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3A10B9E328D4B039009E1455 /* TableView_Exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableView_Exercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A10B9E628D4B039009E1455 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3A10B9E828D4B039009E1455 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3A10B9EA28D4B039009E1455 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3A10B9ED28D4B039009E1455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3A10B9EF28D4B03B009E1455 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A10B9F228D4B03B009E1455 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A10B9F428D4B03B009E1455 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A10B9FA28D4B1D4009E1455 /* CoffeeShop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CoffeeShop.storyboard; sourceTree = "<group>"; };
 		3A10B9FC28D4B26C009E1455 /* CoffeeShopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopListViewController.swift; sourceTree = "<group>"; };
 		3A10B9FE28D4BBBA009E1455 /* CoffeeShopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopViewCell.swift; sourceTree = "<group>"; };
+		3A5BC3CF28DDF63400CE9111 /* Coffeeshop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffeeshop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,18 +60,73 @@
 		3A10B9E528D4B039009E1455 /* TableView_Exercise */ = {
 			isa = PBXGroup;
 			children = (
-				3A10B9E628D4B039009E1455 /* AppDelegate.swift */,
-				3A10B9E828D4B039009E1455 /* SceneDelegate.swift */,
-				3A10B9EA28D4B039009E1455 /* ViewController.swift */,
-				3A10B9EC28D4B039009E1455 /* Main.storyboard */,
-				3A10B9FA28D4B1D4009E1455 /* CoffeeShop.storyboard */,
-				3A10B9FC28D4B26C009E1455 /* CoffeeShopListViewController.swift */,
-				3A10B9FE28D4BBBA009E1455 /* CoffeeShopViewCell.swift */,
-				3A10B9EF28D4B03B009E1455 /* Assets.xcassets */,
-				3A10B9F128D4B03B009E1455 /* LaunchScreen.storyboard */,
 				3A10B9F428D4B03B009E1455 /* Info.plist */,
+				3A10B9EF28D4B03B009E1455 /* Assets.xcassets */,
+				3A5BC3D128DDFD2900CE9111 /* App */,
+				3A10B9F128D4B03B009E1455 /* LaunchScreen.storyboard */,
+				3A5BC3D728DDFF4D00CE9111 /* Modules */,
 			);
 			path = TableView_Exercise;
+			sourceTree = "<group>";
+		};
+		3A5BC3D128DDFD2900CE9111 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3A10B9E628D4B039009E1455 /* AppDelegate.swift */,
+				3A10B9E828D4B039009E1455 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		3A5BC3D428DDFDA200CE9111 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3A5BC3CF28DDF63400CE9111 /* Coffeeshop.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3A5BC3D528DDFDB400CE9111 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A10B9FE28D4BBBA009E1455 /* CoffeeShopViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3A5BC3D628DDFDB900CE9111 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3A10B9FA28D4B1D4009E1455 /* CoffeeShop.storyboard */,
+				3A10B9FC28D4B26C009E1455 /* CoffeeShopListViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3A5BC3D728DDFF4D00CE9111 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3A5BC3D928DDFF6800CE9111 /* Profile */,
+				3A5BC3D828DDFF5500CE9111 /* CoffeeshopList */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3A5BC3D828DDFF5500CE9111 /* CoffeeshopList */ = {
+			isa = PBXGroup;
+			children = (
+				3A5BC3D428DDFDA200CE9111 /* Models */,
+				3A5BC3D528DDFDB400CE9111 /* Views */,
+				3A5BC3D628DDFDB900CE9111 /* Controllers */,
+			);
+			path = CoffeeshopList;
+			sourceTree = "<group>";
+		};
+		3A5BC3D928DDFF6800CE9111 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +190,6 @@
 				3A10B9F328D4B03B009E1455 /* LaunchScreen.storyboard in Resources */,
 				3A10B9F028D4B03B009E1455 /* Assets.xcassets in Resources */,
 				3A10B9FB28D4B1D4009E1455 /* CoffeeShop.storyboard in Resources */,
-				3A10B9EE28D4B039009E1455 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,9 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A10B9EB28D4B039009E1455 /* ViewController.swift in Sources */,
 				3A10B9E728D4B039009E1455 /* AppDelegate.swift in Sources */,
 				3A10B9FD28D4B26C009E1455 /* CoffeeShopListViewController.swift in Sources */,
+				3A5BC3D028DDF63400CE9111 /* Coffeeshop.swift in Sources */,
 				3A10B9FF28D4BBBA009E1455 /* CoffeeShopViewCell.swift in Sources */,
 				3A10B9E928D4B039009E1455 /* SceneDelegate.swift in Sources */,
 			);
@@ -159,14 +211,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3A10B9EC28D4B039009E1455 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3A10B9ED28D4B039009E1455 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3A10B9F128D4B03B009E1455 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -304,7 +348,7 @@
 				INFOPLIST_FILE = TableView_Exercise/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = CoffeeShop;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -332,7 +376,7 @@
 				INFOPLIST_FILE = TableView_Exercise/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = CoffeeShop;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
