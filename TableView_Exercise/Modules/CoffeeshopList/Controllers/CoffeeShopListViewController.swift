@@ -12,7 +12,7 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var tableView: UITableView!
     
     var coffeeshops: [Coffeeshop] = [
-        Coffeeshop(name: "Boja Eatery", type: "Coffeeshop / Cafe", location: "Jl. Pungkur", image: "bojaeatery", isFavorite: false),
+        Coffeeshop(name: "Boja Eatery", type: "Coffeeshop / Cafe", location: "Jl. Pungkur", image: nil, isFavorite: false),
         
         Coffeeshop(name: "Brewery Coffee", type: "Tea House", location: "Jl. Buahbatu", image: "brewery", isFavorite: false),
         
@@ -42,7 +42,6 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
         
         Coffeeshop(name: "Urra Cafe", type: "Warmindo", location: "Jl. Riau", image: "urracafe", isFavorite: false)
     ]
-//    var favoritedCoffeeshops: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,7 +61,14 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "coffeeShopCellId", for: indexPath) as! CoffeeShopViewCell
         
         let coffeeshop = coffeeshops[indexPath.row]
-        cell.thumbImageView.image = UIImage(named: coffeeshop.image)
+        
+        if let image = coffeeshop.image {
+            cell.thumbImageView.image = UIImage(named: image)
+        }
+        else {
+            cell.thumbImageView.image = UIImage(systemName: "photo")
+        }
+        
         cell.nameLabel.text = coffeeshop.name
         cell.addressLabel.text = coffeeshop.location
         cell.categoryLabel.text = coffeeshop.type
@@ -84,14 +90,6 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
-    /*
-    func isFavorited(_ index: Int) -> Bool {
-//        return favoritedCoffeeshops.contains(where: { item in
-//            return item == index
-//        })
-        return favoritedCoffeeshops.contains(where: { $0 == index })
-    }
-     */
     
     func toogleFavorite(_ index: Int) {
         if coffeeshops[index].isFavorite {
@@ -101,14 +99,6 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
             coffeeshops[index].isFavorite = true
         }
         
-//        let idx = favoritedCoffeeshops.firstIndex(where: { item in return item == index })
-//        if idx != nil {
-//            favoritedCoffeeshops.remove(at: idx!)
-//        }
-//        else {
-//            favoritedCoffeeshops.append(index)
-//        }
-//        tableView.reloadData()
         tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.none)
     }
     
@@ -141,23 +131,60 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
         
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        switch editingStyle {
-        case .delete:
-            coffeeshops.remove(at: indexPath.row)
-//            coffeeshopNames.remove(at: indexPath.row)
-//            coffeeshopTypes.remove(at: indexPath.row)
-//            coffeeshopLocations.remove(at: indexPath.row)
-//            coffeeshopImage.remove(at: indexPath.row)
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        switch editingStyle {
+//        case .delete:
+//            delete(at: indexPath)
+//
+//        default:
+//            break
+//        }
+//    }
+    
+    func delete(at indexPath: IndexPath) {
+        coffeeshops.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: UIContextualAction.Style.destructive, title: "Delete") { action, view, completion in
             
-//            if let idx = favoritedCoffeeshops.firstIndex(where: { item in return item == indexPath.row }) {
-//                favoritedCoffeeshops.remove(at: idx)
-//            }
-            
-            tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-             
-        default:
-            break
+            self.delete(at: indexPath)
+            completion(true)
         }
+        delete.image = UIImage(systemName: "trash")
+        
+        let share = UIContextualAction(style: .normal, title: "Share") { _, view, completion in
+            self.share(at: indexPath)
+            completion(true)
+        }
+        share.image = UIImage(systemName: "square.and.arrow.up")
+        share.backgroundColor = UIColor.systemYellow
+        
+        let actions = UISwipeActionsConfiguration(actions: [delete, share])
+        actions.performsFirstActionWithFullSwipe = false
+        return actions
+    }
+    
+    func share(at indexpath: IndexPath) {
+        let coffeeshop = coffeeshops[indexpath.row]
+        
+        let name = coffeeshop.name ?? ""
+        print(name)
+        
+        let image: UIImage
+        if let imageName = coffeeshop.image {
+            image = UIImage(named: imageName) ?? UIImage(systemName: "photo")!
+        }
+        else {
+            image = UIImage(systemName: "photo")!
+        }
+        
+        let url = URL(string: "https://fazztrack.com/minicamp/ios-app-development/1b5a59ec-beaf-4f29-9cce-0b21b2089746")!
+        
+        let viewController = UIActivityViewController(activityItems: [name, image, url], applicationActivities: nil)
+        viewController.popoverPresentationController?.sourceView = view
+        present(viewController, animated: true)
     }
 }
