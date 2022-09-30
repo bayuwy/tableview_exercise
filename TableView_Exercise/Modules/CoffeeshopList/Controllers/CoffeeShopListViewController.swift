@@ -99,7 +99,7 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
             coffeeshops[index].isFavorite = true
         }
         
-        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.none)
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: UITableView.RowAnimation.automatic)
     }
     
     // MARK: - UITableViewDelegate
@@ -107,6 +107,12 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
+        let storyboard = UIStoryboard(name: "CoffeeShop", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CoffeeShopDetail")
+        
+        navigationController?.pushViewController(viewController, animated: true)
+        
+        /*
         let actionSheet = UIAlertController(title: "What do you want to do?", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         
         actionSheet.addAction(UIAlertAction(title: "Reserve a table", style: UIAlertAction.Style.default, handler: { alert in
@@ -127,7 +133,7 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
         actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         
         present(actionSheet, animated: true)
-        
+        */
         
     }
     
@@ -186,5 +192,23 @@ class CoffeeShopListViewController: UIViewController, UITableViewDataSource, UIT
         let viewController = UIActivityViewController(activityItems: [name, image, url], applicationActivities: nil)
         viewController.popoverPresentationController?.sourceView = view
         present(viewController, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let coffeeshop = coffeeshops[indexPath.row]
+        let title = coffeeshop.isFavorite ? "Un-favorite" : "Favorite"
+        
+        let favorite = UIContextualAction(style: .normal, title: title) { action, view, completion in
+            self.toogleFavorite(indexPath.row)
+            completion(true)
+        }
+        
+        favorite.image = UIImage(systemName: coffeeshop.isFavorite ? "heart.slash" : "heart")
+        favorite.backgroundColor = UIColor.systemYellow
+        
+        let actions = UISwipeActionsConfiguration(actions: [favorite])
+        actions.performsFirstActionWithFullSwipe = true
+        return actions
     }
 }

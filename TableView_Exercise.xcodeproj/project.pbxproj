@@ -15,6 +15,7 @@
 		3A10B9FD28D4B26C009E1455 /* CoffeeShopListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10B9FC28D4B26C009E1455 /* CoffeeShopListViewController.swift */; };
 		3A10B9FF28D4BBBA009E1455 /* CoffeeShopViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A10B9FE28D4BBBA009E1455 /* CoffeeShopViewCell.swift */; };
 		3A5BC3D028DDF63400CE9111 /* Coffeeshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5BC3CF28DDF63400CE9111 /* Coffeeshop.swift */; };
+		3A657B4628E73E0D005651C1 /* CoffeeShopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A657B4528E73E0D005651C1 /* CoffeeShopDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3A10B9FC28D4B26C009E1455 /* CoffeeShopListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopListViewController.swift; sourceTree = "<group>"; };
 		3A10B9FE28D4BBBA009E1455 /* CoffeeShopViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopViewCell.swift; sourceTree = "<group>"; };
 		3A5BC3CF28DDF63400CE9111 /* Coffeeshop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coffeeshop.swift; sourceTree = "<group>"; };
+		3A657B4528E73E0D005651C1 /* CoffeeShopDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeShopDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				3A10B9FA28D4B1D4009E1455 /* CoffeeShop.storyboard */,
 				3A10B9FC28D4B26C009E1455 /* CoffeeShopListViewController.swift */,
+				3A657B4528E73E0D005651C1 /* CoffeeShopDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A10B9E728D4B039009E1455 /* AppDelegate.swift in Sources */,
+				3A657B4628E73E0D005651C1 /* CoffeeShopDetailViewController.swift in Sources */,
 				3A10B9FD28D4B26C009E1455 /* CoffeeShopListViewController.swift in Sources */,
 				3A5BC3D028DDF63400CE9111 /* Coffeeshop.swift in Sources */,
 				3A10B9FF28D4BBBA009E1455 /* CoffeeShopViewCell.swift in Sources */,
